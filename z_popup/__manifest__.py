@@ -21,7 +21,7 @@
 
     # any module necessary for this one to work correctly
     # 'depends': ['base', 'web_widget_numeric_step'],
-    'depends': ['base', 'web', 'my_module'],
+    'depends': ['base', 'web'],
 
     # always loaded
     'data': [
