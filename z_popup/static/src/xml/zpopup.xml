@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+    <t t-name="my_web_widget_numeric_step" owl="1">
+        <div class="d-flex widget_numeric_step">
+        <input
+                t-att-id="props.id"
+                t-att-value="props.value"
+                t-ref="numpadChar"
+                t-att-name="props.name"
+                t-att-type="props.inputType"
+                t-att-placeholder="props.placeholder"
+                t-att-relatedmodel="props.relatedmodel"
+                t-att-relatedaction="props.relatedaction"
+                class="o_input input_numeric_step"
+                t-att-step="props.step"
+                t-on-input="_onInputChange"
+        />
+        <div class="input-group-append btn-copy">
+                <button 
+                    class="btn btn-primary"
+                    title ="Copy"
+                    type="button"
+                    data-mode="copy"
+                    t-on-click="_OnCopyClick"
+                ><i class="fa fa-copy"/></button>
+            </div>
+        </div>
+    </t>
+</template>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+

@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+    <record id="z_popup_tree_view" model="ir.ui.view">
+      <field name="name">Popup Tree</field>
+      <field name="model">z_popup.z_popup</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="email"/>
+          <field name="registration_no"/>
+          <field name="registered_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="z_popup_form_view" model="ir.ui.view">
+      <field name="name">z_popup.view.form</field>
+      <field name="model">z_popup.z_popup</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" widget="my_numeric_step" relatedModel="z_popup.student" relatedAction='get_name'/>
+              <field name="email"/>
+              <field name="registration_no"/>
+              <field name="registered_date"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="z_popup_list_action" model="ir.actions.act_window">
+      <field name="name">Registration</field>
+      <field name="res_model">z_popup.z_popup</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="z_popup_student_view" model="ir.ui.view">
+      <field name="name">z_popup.student.list</field>
+      <field name="model">z_popup.student</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="email"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="z_popup_student_action" model="ir.actions.act_window">
+      <field name="name">z_popup.student.action</field>
+      <field name="res_model">z_popup.student</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+    <menuitem name="A PopUp" id="z_popup.menu_root" sequence="1"/>
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="z_popup.menu_1" parent="z_popup.menu_root"/>
+    <menuitem name="Menu 2" id="z_popup.menu_2" parent="z_popup.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="List" id="z_popup.menu_1_list" parent="z_popup.menu_root" action="z_popup_list_action"/>
+    <!-- <menuitem name="Server to list" id="z_popup" parent="z_popup.menu_2" action="z_popup.action_server"/> -->
+
+    <menuitem name="Student" id="z_popup.menu_student" parent="z_popup.menu_root" action="z_popup_student_action"/>
+  </data>
+</odoo>

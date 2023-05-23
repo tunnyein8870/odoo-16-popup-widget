@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_z_popup_z_popup,z_popup.z_popup,model_z_popup_z_popup,base.group_user,1,1,1,1
+access_z_popup_student,z_popup.student,model_z_popup_student,base.group_user,1,1,1,1
