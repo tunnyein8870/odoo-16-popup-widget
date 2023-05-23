@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <template>
-    <t t-name="my_web_widget_numeric_step" owl="1">
+    <t t-name="my_popup_widget_template" owl="1">
         <div class="d-flex widget_numeric_step">
         <input
                 t-att-id="props.id"

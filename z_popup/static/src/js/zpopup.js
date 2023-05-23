@@ -9,7 +9,7 @@ import { useOwnedDialogs, useService } from "@web/core/utils/hooks";
 
 var rpc = require('web.rpc');
 
-export class MyNumericStep extends CharField {
+export class PopupWidget extends CharField {
     setup() {
         super.setup();
         this.addDialog = useOwnedDialogs();
@@ -37,6 +37,7 @@ export class MyNumericStep extends CharField {
         return result;
     }
 
+    // select record on widget
     _onSelectedRecord(records) {
         if (records.length > 0) {
             const selectedRecord = records[0];
@@ -76,6 +77,7 @@ export class MyNumericStep extends CharField {
         });
     }
 
+    // update values
     _doStep(result) {
         let cval = result
         cval += this.props.step;
@@ -83,6 +85,7 @@ export class MyNumericStep extends CharField {
         this.props.setDirty(this._isSetDirty(cval));
     }
 
+    // resolve props
     updateField(val) {
         return Promise.resolve(this.props.update(val));
     }
@@ -93,10 +96,10 @@ export class MyNumericStep extends CharField {
 }
 
 // set template
-MyNumericStep.template = "my_web_widget_numeric_step";
+PopupWidget.template = "my_popup_widget_template";
 
 // set props/key
-MyNumericStep.props = {
+PopupWidget.props = {
     ...standardFieldProps,
     name: { type: String, optional: true },
     inputType: { type: String, optional: true },
@@ -107,11 +110,11 @@ MyNumericStep.props = {
 };
 
 // set attrs in widget as options
-MyNumericStep.displayName = _lt("Numeric Step");
-MyNumericStep.defaultProps = {
+PopupWidget.displayName = _lt("Numeric Step");
+PopupWidget.defaultProps = {
     inputType: "text",
 };
-MyNumericStep.extractProps = ({ attrs }) => {
+PopupWidget.extractProps = ({ attrs }) => {
     return {
         name: attrs.name,
         inputType: attrs.options.type,
@@ -122,4 +125,4 @@ MyNumericStep.extractProps = ({ attrs }) => {
     };
 };
 
-registry.category("fields").add("my_numeric_step", MyNumericStep);
+registry.category("fields").add("popup_widget", PopupWidget);

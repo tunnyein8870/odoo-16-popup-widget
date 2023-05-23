@@ -20,7 +20,7 @@
         <form string="">
           <sheet>
             <group>
-              <field name="name" widget="my_numeric_step" relatedModel="z_popup.student" relatedAction='get_name'/>
+              <field name="name" widget="popup_widget" relatedModel="z_popup.student" relatedAction='get_name'/>
               <field name="email"/>
               <field name="registration_no"/>
               <field name="registered_date"/>
