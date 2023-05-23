@@ -17,13 +17,16 @@ e.g.
 <field name="name" widget="z_popup.student" relatedAction="get_name"/>
 
 name: name in model
+
 widget = widget name
+
 relatedAction = method in another model
 
 # method in another model be like:
 another model:
 
 class Someone(models.Model):
+
   _name = 'modulename.modelname'
   
   name = fields.Char()
