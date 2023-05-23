@@ -36,7 +36,7 @@ class Someone(models.Model):
 def get_name(self)
   record = self.browse(record_id)
     return {
-      'name': record.name,
+      'name': record.name, \
       'email': record.email,
    }
 
