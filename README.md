@@ -4,7 +4,7 @@ This widget is an odoo popup widget that displays a popup box for a model in a t
 The widget will display the related field at the frontend. 
 For example: when the data in the field named 'name' is selected, the value of the 'name' will be displayed in the widget. 
 In this whole module:
-'nane' and 'email' related to this 'name' will be directly displayed when the record is selected. 
+'name' and 'email' related to this 'name' will be directly displayed when the record is selected. 
 
 [usage:] 
 model:
